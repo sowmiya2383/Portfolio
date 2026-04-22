@@ -85,28 +85,6 @@ Intelligent chatbot generating personalized travel plans based on user preferenc
 | Text Light | `#ffffff` | Primary text |
 | Text Secondary | `#a0aec0` | Secondary text |
 
-## 🚀 Quick Start
-
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/sowmiya2383/sowmiya2383.github.io.git
-   cd sowmiya2383.github.io
-   ```
-
-2. **Open in browser**
-   ```bash
-   # Using Python
-   python -m http.server 8000
-   
-   # Or simply open index.html in your browser
-   open index.html
-   ```
-
-3. **Customize for your use**
-   - Replace `images/profile.jpg` with your photo
-   - Update content in `index.html`
-   - Modify colors in CSS `:root` variables
-
 ## 📱 Responsive Breakpoints
 
 | Device | Breakpoint | Layout Adjustments |
@@ -141,10 +119,6 @@ The portfolio includes comprehensive meta tags for:
 [![Location](https://img.shields.io/badge/Location-Chennai%2C%20India-green?style=flat-square&logo=google-maps)](https://maps.google.com/?q=Chennai,India)
 
 </div>
-
-## 📄 License
-
-This project is open source and available under the [MIT License](LICENSE).
 
 ## 🙏 Acknowledgments
 
