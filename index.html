@@ -61,7 +61,7 @@
       position: absolute;
       top: 0;
       left: 0;
-      right: 0; 
+      right: 0;
       bottom: 0;
       background: radial-gradient(circle at 20% 30%, #142040, #0a0e1a);
     }
@@ -77,6 +77,7 @@
       background-size: auto;
       opacity: 0.35;
       pointer-events: none;
+      filter: invert(1);
     }
 
     @font-face {
@@ -268,10 +269,10 @@
     .skill-tag {
       display: inline-block;
       background: rgba(255, 255, 255, 0.05);
-      padding: 0.6rem 1.2rem;
+      padding: 0.5rem 1rem;
       border-radius: 30px;
-      margin: 0.25rem;
-      font-size: 0.9rem;
+      margin: 0.2rem;
+      font-size: 0.85rem;
       font-weight: 500;
       transition: all 0.3s ease;
       border: 1px solid rgba(255, 255, 255, 0.08);
@@ -283,15 +284,34 @@
       border-color: var(--primary);
     }
 
+    /* Skills Grid - NEW COMPACT LAYOUT */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.2rem;
+    }
+
     .skill-category {
-      margin-bottom: 1.5rem;
+      background: rgba(30, 100, 255, 0.05);
+      border-radius: 16px;
+      padding: 1rem;
+      border: 1px solid var(--border-glow);
     }
 
     .skill-category h4 {
       color: var(--primary-light);
       margin-bottom: 0.75rem;
-      font-size: 1.1rem;
+      font-size: 1rem;
       font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .skill-category .skill-items {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
     }
 
     /* Buttons */
@@ -527,6 +547,15 @@
         padding: 0.7rem 1.2rem;
         font-size: 0.85rem;
       }
+      .skills-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (min-width: 769px) and (max-width: 1024px) {
+      .skills-grid {
+        grid-template-columns: 1fr;
+      }
     }
 
     ::-webkit-scrollbar {
@@ -605,7 +634,7 @@
             <div class="stat-label">Certifications</div>
           </div>
           <div class="stat-badge">
-            <div class="stat-number">5+</div>
+            <div class="stat-number">10+</div>
             <div class="stat-label">Technologies</div>
           </div>
         </div>
@@ -617,12 +646,14 @@
   </div>
 </section>
 
-<!-- ABOUT SECTION -->
+<!-- ABOUT SECTION - RESTRUCTURED -->
 <section id="about" class="section-grid lazy-section">
   <div class="container-center">
     <div>
       <h2 class="section-title">About Me</h2>
-      <div class="grid-2cols">
+      <div style="display: grid; grid-template-columns: 1fr 1.2fr; gap: 2.5rem; align-items: start;">
+        
+        <!-- Left Column - About Text (Extended) -->
         <div>
           <p class="body-font" style="font-size: 1.05rem; margin-bottom: 1.5rem; line-height: 1.7; color: var(--text-secondary);">
             I'm an AI/ML enthusiast with a passion for building intelligent systems that solve real-world problems. My journey in tech is driven by curiosity and a desire to create meaningful impact through code and data.
@@ -630,17 +661,35 @@
           <p class="body-font" style="margin-bottom: 1.5rem; line-height: 1.7; color: var(--text-secondary);">
             I have worked on multiple self-driven projects that focus on solving real-world challenges using AI, machine learning, and automation tools. My experience includes building NLP-based applications, developing intelligent systems, and creating automated workflows that improve efficiency.
           </p>
-          <p class="body-font" style="line-height: 1.7; color: var(--text-secondary);">
+          <p class="body-font" style="margin-bottom: 1.5rem; line-height: 1.7; color: var(--text-secondary);">
             I am particularly interested in areas like artificial intelligence, data analysis, and system design. I enjoy breaking down complex problems and building structured solutions. Apart from technical work, I am also interested in designing user-friendly applications and improving overall user experience.
           </p>
+          <p class="body-font" style="line-height: 1.7; color: var(--text-secondary);">
+            When I'm not coding, I participate in hackathons and tech symposiums, constantly learning and staying updated with emerging technologies. I believe in the power of technology to transform ideas into impactful solutions.
+          </p>
+          
+          <!-- Professional Interests moved here -->
+          <div style="margin-top: 2rem;">
+            <h3 style="font-size: 1.2rem; margin-bottom: 1rem; font-family: 'YADK4LSvvyE-0'; color: var(--primary-light);">Professional Interests</h3>
+            <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+              <span class="skill-tag">📊 Data Analytics</span>
+              <span class="skill-tag">🤖 AI/ML</span>
+              <span class="skill-tag">🎨 Product Design</span>
+              <span class="skill-tag">💻 Web Designing</span>
+              <span class="skill-tag">🔮 NLP</span>
+              <span class="skill-tag">⚡ Automation</span>
+            </div>
+          </div>
         </div>
-        <div>
-          <div style="background: var(--card-bg); border-radius: 20px; padding: 2rem; backdrop-filter: blur(8px); border: 1px solid var(--border-glow);">
-            <h3 style="font-size: 1.4rem; margin-bottom: 1.5rem; font-family: 'YADK4LSvvyE-0'; color: var(--primary-light);">Technical Expertise</h3>
-            
+        
+        <!-- Right Column - Skills in Compact Grid -->
+        <div style="background: var(--card-bg); border-radius: 20px; padding: 1.8rem; backdrop-filter: blur(8px); border: 1px solid var(--border-glow);">
+          <h3 style="font-size: 1.4rem; margin-bottom: 1.5rem; font-family: 'YADK4LSvvyE-0'; color: var(--primary-light);">Technical Expertise</h3>
+          
+          <div class="skills-grid">
             <div class="skill-category">
-              <h4>Programming</h4>
-              <div>
+              <h4>💻 Programming</h4>
+              <div class="skill-items">
                 <span class="skill-tag">Python</span>
                 <span class="skill-tag">SQL</span>
                 <span class="skill-tag">Java (Basics)</span>
@@ -649,9 +698,9 @@
             </div>
             
             <div class="skill-category">
-              <h4>Generative AI & NLP</h4>
-              <div>
-                <span class="skill-tag">Transformer Models</span>
+              <h4>🤖 Gen AI & NLP</h4>
+              <div class="skill-items">
+                <span class="skill-tag">Transformers</span>
                 <span class="skill-tag">LLMs</span>
                 <span class="skill-tag">Conversational AI</span>
                 <span class="skill-tag">Big-BERT</span>
@@ -659,8 +708,8 @@
             </div>
             
             <div class="skill-category">
-              <h4>Machine Learning</h4>
-              <div>
+              <h4>📊 Machine Learning</h4>
+              <div class="skill-items">
                 <span class="skill-tag">Random Forest</span>
                 <span class="skill-tag">SVM</span>
                 <span class="skill-tag">KNN</span>
@@ -670,8 +719,8 @@
             </div>
             
             <div class="skill-category">
-              <h4>Computer Vision</h4>
-              <div>
+              <h4>👁️ Computer Vision</h4>
+              <div class="skill-items">
                 <span class="skill-tag">YOLO</span>
                 <span class="skill-tag">OpenCV</span>
                 <span class="skill-tag">Image Processing</span>
@@ -679,8 +728,8 @@
             </div>
             
             <div class="skill-category">
-              <h4>Tools & Technologies</h4>
-              <div>
+              <h4>🛠️ Tools & Tech</h4>
+              <div class="skill-items">
                 <span class="skill-tag">Git</span>
                 <span class="skill-tag">Docker (Basics)</span>
                 <span class="skill-tag">Tableau</span>
@@ -690,15 +739,6 @@
                 <span class="skill-tag">n8n</span>
                 <span class="skill-tag">Kore.ai</span>
               </div>
-            </div>
-
-            <h3 style="font-size: 1.3rem; margin: 2rem 0 1rem; font-family: 'YADK4LSvvyE-0'; color: var(--primary-light);">Professional Interests</h3>
-            <div>
-              <span class="skill-tag">📊 Data Analytics</span>
-              <span class="skill-tag">🤖 AI/ML</span>
-              <span class="skill-tag">🎨 Product Design</span>
-              <span class="skill-tag">💻 Web Designing</span>
-              <span class="skill-tag">🔮 NLP</span>
             </div>
           </div>
         </div>
